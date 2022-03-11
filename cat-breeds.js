@@ -3115,3 +3115,7 @@ const catBreeds = [
       "wikipedia_url": "https://en.wikipedia.org/wiki/York_Chocolate"
     }
   ]
+
+
+
+  module.exports = catBreeds; //Export catBreeds array of objects for use in cat-functions.js//
