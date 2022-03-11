@@ -1,0 +1,13 @@
+{
+  "name": "my-cat-functions",
+  "version": "1.0.0",
+  "description": "A project to practice advanced functions.",
+  "main": "cat-breeds.js",
+  "scripts": {
+    "start": "node cat-functions.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Molly Jones",
+  "license": "ISC"
+}
