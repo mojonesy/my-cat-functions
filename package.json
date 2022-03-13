@@ -5,9 +5,13 @@
   "main": "cat-breeds.js",
   "scripts": {
     "start": "node cat-functions.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test"
   },
   "keywords": [],
   "author": "Molly Jones",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^9.2.2"
+  }
 }
