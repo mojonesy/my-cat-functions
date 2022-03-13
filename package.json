@@ -4,14 +4,15 @@
   "description": "A project to practice advanced functions.",
   "main": "cat-breeds.js",
   "scripts": {
-    "start": "node cat-functions.js",
-    "test": "mocha test"
+    "start": "node ../my-cat-functions/src/main.js",
+    "test": "nyc --reporter=text mocha test"
   },
   "keywords": [],
   "author": "Molly Jones",
   "license": "ISC",
   "devDependencies": {
     "chai": "^4.3.6",
-    "mocha": "^9.2.2"
+    "mocha": "^9.2.2",
+    "nyc": "^15.1.0"
   }
 }
