@@ -1,4 +1,4 @@
-const catBreeds = require("./cat-breeds"); //Import catBreeds array of objects from cat-breeds.js file.//
+const catBreeds = require("..src/cat-breeds"); //Import catBreeds array of objects from cat-breeds.js file.//
 
 
 
@@ -14,5 +14,5 @@ findCatById("mcoo", catBreeds);
 
 
 
-
+module.exports = findCatById;
 
