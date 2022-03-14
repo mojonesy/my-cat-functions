@@ -5,7 +5,8 @@
   "main": "cat-breeds.js",
   "scripts": {
     "start": "node ../my-cat-functions/src/main.js",
-    "test": "nyc --reporter=text mocha test"
+    "test": "mocha test",
+    "test:nyc": "nyc --reporter=text mocha test"
   },
   "keywords": [],
   "author": "Molly Jones",
