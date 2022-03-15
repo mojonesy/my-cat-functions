@@ -1,5 +1,5 @@
 const { expect } = require("chai");
-const catBreeds = require("../src/cat-breeds");
+const { catBreeds } = require("../src/cat-breeds");
 const findCatById = require("../src/main");
 
 describe("findCatById", () => {
