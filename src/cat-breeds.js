@@ -3118,4 +3118,4 @@ const catBreeds = [
 
 
 
-  module.exports = catBreeds; //Export catBreeds array of objects for use in cat-functions.js//
+  module.exports = catBreeds; //Export catBreeds array of objects for use in main.js and main.test.js//

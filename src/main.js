@@ -2,7 +2,7 @@ const catBreeds = require("../src/cat-breeds"); //Import catBreeds array of obje
 
 
 
-function findCatById(id, catBreeds) {
+function findCatById(catBreeds, id) {
     let catName = null;
     for (let i = 0; i < catBreeds.length; i++) {
             if (catBreeds[i].id === id) catName = catBreeds[i].name;
