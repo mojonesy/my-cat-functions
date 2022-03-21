@@ -3,6 +3,7 @@ const { catBreeds } = require("../src/cat-breeds");
 const { 
     findCatById, 
     getHeightAndWeightByName,
+    getNamesByCountry,
 } = require("../src/main");
 
 describe("findCatById", () => {
@@ -11,6 +12,11 @@ describe("findCatById", () => {
         const actual = findCatById(catBreeds, "abys");
         expect(actual).to.equal(expected);
     });
+
+    it ("should return 'null' if id cannot be found", () => {
+        const actual = findCatById(catBreeds, "frosted");
+        expect(actual).to.be.null;
+    })
 });
 
 describe ("getHeightAndWeightByName", () => {
@@ -24,4 +30,29 @@ describe ("getHeightAndWeightByName", () => {
         const actual = getHeightAndWeightByName(catBreeds, "Cattycat");
         expect(actual).to.equal('No such cat.');
     })
+});
+
+describe ("getNamesByCountry", () => {
+    it ("should return an array of all cat names associated with a given country", () => {
+        const actual = getNamesByCountry(catBreeds, "Canada");
+        const expected = ["Cymric", "Sphynx", "Tonkinese"];
+        expect(actual).to.eql(expected);
+    });
+
+    it ("should convert 'country' to title case", () => {
+        const actual = getNamesByCountry(catBreeds, "CANADA");
+        const expected = ["Cymric", "Sphynx", "Tonkinese"];
+        expect(actual).to.eql(expected);
+    });
+
+//error handling//
+    it ("should return 'null' if no cats can be found", () => {
+        const actual = getNamesByCountry(catBreeds, "India");
+        expect(actual).to.be.null;
+    });
+
+    it ("should return 'false' if no country is given", () => {
+        const actual = getNamesByCountry(catBreeds);
+        expect(actual).to.be.false;
+    });
 })
