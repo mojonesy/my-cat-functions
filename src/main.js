@@ -27,11 +27,45 @@ function getHeightAndWeightByName(catBreeds, name) {
 }
 
 
+//returns cat names originating from given country//
+function getNamesByCountry(catBreeds, country) {
+    try {
+        if (!country) throw Error("Please provide a country");
+    } catch (error) {
+        console.log(`${error}`);
+        return false;
+    }
+
+    const newCountry = toTitleCase(country);
+    let result = [];
+    catBreeds.map((breed) => {
+        if (breed.origin === newCountry) result.push(breed.name);
+    });
+
+    if (result.length === 0) return null;
+    return result;
+}
+
+    function toTitleCase(string) {
+        str = string.toLowerCase().split('');
+        const first = str[0].toUpperCase();
+        str.shift(0);
+        str.unshift(first);
+        return str.join('');
+    }
+
+console.log(getHeightAndWeightByName(catBreeds,"Russian Blue"));
+
+
+
+
+
 findCatById(catBreeds, 'mcoo');
 getHeightAndWeightByName(catBreeds, 'Abyssinian');
 
 module.exports = {
     findCatById, 
     getHeightAndWeightByName,
+    getNamesByCountry
 };
 
