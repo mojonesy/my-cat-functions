@@ -16,7 +16,7 @@ describe("findCatById", () => {
     it ("should return 'null' if id cannot be found", () => {
         const actual = findCatById(catBreeds, "frosted");
         expect(actual).to.be.null;
-    })
+    });
 });
 
 describe ("getHeightAndWeightByName", () => {
@@ -26,10 +26,16 @@ describe ("getHeightAndWeightByName", () => {
         expect(actual).to.eql(expected);
     });
 
+    it ("should convert 'name' to title case", () => {
+        const actual = getHeightAndWeightByName(catBreeds, "ABYSSINIAN");
+        const expected = { 'height': 1445, 'weight': '7  -  10' };
+        expect(actual).to.eql(expected);
+    });
+
     it ("should return 'No such cat.' if cat name cannot be found", () => {
         const actual = getHeightAndWeightByName(catBreeds, "Cattycat");
         expect(actual).to.equal('No such cat.');
-    })
+    });
 });
 
 describe ("getNamesByCountry", () => {

@@ -11,12 +11,14 @@ function findCatById(catBreeds, id) {
 }
 
 
+//returns height/weight of given cat//
 function getHeightAndWeightByName(catBreeds, name) {
+    const catName = toTitleCase(name);
     let result;
     for (let i = 0; i < catBreeds.length; i++) {
         const breedName = catBreeds[i].name;
-        if (breedName !== name) result = 'No such cat.';
-        if (breedName === name) {
+        if (breedName !== catName) result = 'No such cat.';
+        if (breedName === catName) {
             const height = catBreeds[i].image.height;
             const weight = catBreeds[i].weight.imperial;
             result = { height, weight };
