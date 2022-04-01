@@ -1,6 +1,13 @@
 const { catBreeds } = require("../src/cat-breeds"); //Import catBreeds array of objects from cat-breeds.js file.//
 
 
+function toTitleCase(string) {
+    str = string.toLowerCase().split('');
+    const first = str[0].toUpperCase();
+    str.shift(0);
+    str.unshift(first);
+    return str.join('');
+}
 
 function findCatById(catBreeds, id) {
     let catName = null;
@@ -14,6 +21,8 @@ function findCatById(catBreeds, id) {
 //returns height/weight of given cat//
 function getHeightAndWeightByName(catBreeds, name) {
     const catName = toTitleCase(name);
+    console.log(catName);
+    console.log(catBreeds);
     let result;
     for (let i = 0; i < catBreeds.length; i++) {
         const breedName = catBreeds[i].name;
@@ -27,6 +36,9 @@ function getHeightAndWeightByName(catBreeds, name) {
     }
     return result;
 }
+const data = catBreeds();
+console.log(getHeightAndWeightByName(data,"Bengal"));
+
 
 
 //returns cat names originating from given country//
@@ -48,15 +60,9 @@ function getNamesByCountry(catBreeds, country) {
     return result;
 }
 
-    function toTitleCase(string) {
-        str = string.toLowerCase().split('');
-        const first = str[0].toUpperCase();
-        str.shift(0);
-        str.unshift(first);
-        return str.join('');
-    }
+    
 
-console.log(getHeightAndWeightByName(catBreeds,"Russian Blue"));
+
 
 
 
